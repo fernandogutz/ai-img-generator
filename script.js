@@ -72,7 +72,7 @@ function postData(urlApi, prompt) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer SECRET_API_KEY ;)"
         },
         body: JSON.stringify({
             "prompt": prompt,
