@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <title>Genera Imágenes con IA</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form">
+            <h2>Genera imágenes con Inteligencia Artificial</h2>
+            <p>Describe a continuación la imagen a generar...</p>
+            <div class="error">Inténtalo nuevamente. La descripción no debe estar vacía.</div>
+            <textarea name="text" id="text" cols="30" rows="10" placeholder="Ej. 'Flor siendo atacada por un ejército de abejas' "></textarea>
+            <button id="btn" onclick="getImg()">Generar Imagen</button>
+        </div>
+        <div class="loading">
+            <p>Generando...</p>
+            <div class="loading__square"></div>
+        </div>
+        <div class="content" id="img-container">
+
+        </div>
+    </div>
+
+    <footer>Desarrollado por <a href="https://fernandogutz.com/" target="_blank">@FernandoGutz</a></footer>
+    <script src="script.js"></script>
+</body>
+</html>
