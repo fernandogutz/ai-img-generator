@@ -22,8 +22,16 @@ function getImg() {
         .then(response => response.json())
         .then( ({ data }) => {
 
-            //console.log(data);
+            console.log(data);
             //console.log(data.length);
+
+            if(!data) {
+                document.querySelector('.error').style.display = 'block';
+                document.querySelector('.error').innerHTML = `
+                    <p>:( Lo siento, ha ocurrido un error, inténtalo más tarde.</p>
+                `;
+                return;
+            }
 
             for(let i = 0; i < data.length ; i++) {
                 localStorage.setItem(`file${i}`, data[i].b64_json);
@@ -45,6 +53,15 @@ function getImg() {
         .then(() => {
             document.querySelector('.loading').style.display = 'none';
         })
+        .catch(err => {
+            document.querySelector('.loading').style.display = 'none';
+            console.log(err);
+            document.querySelector('.error').style.display = 'block';
+            document.querySelector('.error').innerHTML = `
+                <p>:( Lo siento, ha ocurrido un error, inténtalo más tarde.</p>
+            `;
+        })
+        .finally(() => console.log('finally'))
 
 
 }
@@ -55,7 +72,7 @@ function postData(urlApi, prompt) {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": "Bearer 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"
         },
         body: JSON.stringify({
             "prompt": prompt,
